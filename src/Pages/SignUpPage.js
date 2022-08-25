@@ -1,13 +1,13 @@
 import React from 'react'
-import NavbarLight from '../components/navbarLight'
+import Navbar from '../components/navbar'
 import SignUpCard from '../components/signUpCard'
 import SubscriptionTable from '../components/subscriptionTable'
 
 const SignUpPage = () => {
   return (
     <div>
-        <NavbarLight />
-        <SubscriptionTable/>
+        <Navbar />
+        <SignUpCard/>
         
     </div>
   )

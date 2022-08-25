@@ -9,7 +9,7 @@ const WelcomeText = () => {
     <h3 className='white'> Ready to watch? Enter your email to create or restart your membership..</h3>
     <div>
         <input type="text" className='email-input'></input>
-        <button className='start-button'  >Get Started</button>
+        <button className='start-button'>Get Started</button>
     </div>
     </div>
     </>

@@ -1,12 +1,14 @@
 import LandingPage from './Pages/LandingPage';
 import './App.css';
-import SignUpPage from './Pages/SignUpPage';
-import WelcomeText from './components/welcomeText';
+import { UserContextProvider } from './Context/UserContext';
+import RouterContainer from './Route/RouterContainer';
 
 function App() {
   return (
     <div className="App">
-     <SignUpPage/>
+      <UserContextProvider>
+      <RouterContainer/>
+      </UserContextProvider>
      
     </div>
   );

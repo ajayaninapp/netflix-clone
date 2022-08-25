@@ -29,7 +29,7 @@ const NavbarLight = () => {
               fontWeight:'800px'
             }}
           >
-            Sign In
+            Sign 
           </Button>
           
         </Toolbar>
