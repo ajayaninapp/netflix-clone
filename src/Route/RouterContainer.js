@@ -1,27 +1,35 @@
 import React from 'react'
-import SignInCard from '../components/signInCard'
-import SignUpCard from '../components/signUpCard'
 import HomePage from '../Pages/HomePage'
 import LandingPage from '../Pages/LandingPage'
 import SignUpPage from '../Pages/SignUpPage'
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import SignInPage from '../Pages/SignInPage'
+import { routes } from "./routes";
+import { useUserContext } from '../Context/UserContext'
 
 const RouterContainer = () => {
+  const { user, logIn, isLoggedIn } = useUserContext();
+  const rootUrl = (isLoggedIn ?(routes.home):(routes.landing))
   return (
     <div>
          <BrowserRouter>
-      <Routes>
-      
-        <>        
-          <Route path="/" element={<LandingPage/>} />
-            <Route path="/signin" element={<SignInPage/>}/>
+         <Routes>
+        {isLoggedIn ? (
+          <>
+          <Route path={routes.home} element={<HomePage />} />
           
-
-          <Route path="/signup" element={<SignUpPage/>} />
-          <Route path="/home" element={<HomePage/>} /> 
-                  
         </>
+          
+        ) : (
+          
+          <>
+          <Route path="/" element={<LandingPage />} />
+          <Route path={routes.signup} element={<SignUpPage />} />
+          <Route path={routes.signin} element={<SignInPage />} />
+        </>
+        )}
+        <Route path="*" element={<Navigate to={rootUrl} />} />
+        
       </Routes>
     </BrowserRouter>
     </div>

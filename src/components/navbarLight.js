@@ -18,19 +18,7 @@ const NavbarLight = () => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             <img src={netflixLogo} className="netflix_logo"></img>
           </Typography>
-          <Button
-            
-            sx={{
-              color: "black",
-              background: "transparent",
-              height: "35px",
-              marginTop: "10px",
-              fontSize: "18px",
-              fontWeight:'800px'
-            }}
-          >
-            Sign 
-          </Button>
+          
           
         </Toolbar>
       </AppBar>

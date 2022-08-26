@@ -45,6 +45,8 @@ export function UserContextProvider({ children }) {
   }
   function logOut() {
     setUser(USER);
+    sessionStorage.clear()
+    setIsLoggedIn(false)
   }
   return (
     <userContext.Provider value={{ user, logIn, logOut,isLoggedIn }}>

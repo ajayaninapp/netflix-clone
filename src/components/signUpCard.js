@@ -5,10 +5,13 @@ import { Button, Container, Typography } from "@mui/material";
 import { TextField } from "@mui/material";
 import { useState } from "react";
 import { emailValidate, passwordValidate } from "./validation/validation";
+import { useLocation } from "react-router-dom";
 const SignUpCard = () => {
-  const [details, setDetails] = useState({ email: "", password: "" });
+  const location = useLocation();
+  const [details, setDetails] = useState({ email: location.state, password: "" });
   const [isEmailValid, setIsEmailValid] = useState(true);
   const [isPwdlValid, setIsPwdValid] = useState(true);
+  console.log(location.state)
   const handleSubmit = () => {
     if (isEmailValid&&isPwdlValid) {
        localStorage.setItem(details.email,JSON.stringify(details))      
@@ -25,7 +28,7 @@ const SignUpCard = () => {
     <Container maxWidth="sm" sx={{ marginX: "auto", marginTop: "8vh" }}>
       <Card
         sx={{
-          margin: "20px",
+          margin: "20px 20px 100px 20px",
           width: "100%",
           height: "100%",
           textAlign: "center",
@@ -49,6 +52,7 @@ const SignUpCard = () => {
           </Typography>
           <Box sx={{ paddingTop: "40px" }}>
             <TextField
+            value={details.email}
             error={!isEmailValid}
             helperText={isEmailValid?"":"Enter a valid email"}
               label="E-mail"

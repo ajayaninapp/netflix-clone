@@ -7,20 +7,16 @@ import WelcomeText from "../components/welcomeText";
 const LandingPage = () => {
   return (
     <>
-     <div className="back-img">
-     <div className="bg_img black">
-       
-       <div className="nav">
-          <Navbar />
+      <div className="back-img">
+        <div className="bg_img black">
+          <div className="nav">
+            <Navbar />
+          </div>
+          <div className="banner">
+            <WelcomeText />
+          </div>
         </div>
-        <div className="banner">
-          <WelcomeText/>
-          
-        </div>
-      
       </div>
-      <div className="content">Content</div>
-     </div>
     </>
   );
 };
