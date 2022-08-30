@@ -8,7 +8,7 @@ import { routes } from "./routes";
 import { useUserContext } from '../Context/UserContext'
 
 const RouterContainer = () => {
-  const { user, logIn, isLoggedIn } = useUserContext();
+  const { isLoggedIn } = useUserContext();
   const rootUrl = (isLoggedIn ?(routes.home):(routes.landing))
   return (
     <div>

@@ -1,9 +1,9 @@
 import * as axios from "axios";
 import { API_KEY, imageUrl } from "../Constants/constants"; 
-import { useState } from "react";
 
 
-export const getMovie = () => {
+//Banner movie api
+export const getMovie = () => { 
    return axios
       .get(
         `https://api.themoviedb.org/3/trending/all/week?api_key=${API_KEY}&language=en-US`
@@ -17,7 +17,7 @@ export const getMovie = () => {
     });
 
 }
-
+//Movie Row api
 export const getMovies =(url) =>{
     return  axios.get(url).then((response)=>{
             

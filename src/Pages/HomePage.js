@@ -2,17 +2,14 @@ import React from "react";
 import Navbar from "../components/navbar";
 import Banner from "../components/banner";
 import Rowposts from "../components/rowposts";
-import { Container, Box } from "@mui/material";
+import { Box } from "@mui/material";
 import { useState, useEffect } from "react";
-import { API_KEY, imageUrl } from "../Constants/constants";
+import { imageUrl } from "../Constants/constants";
 import { action, trending, comedyMovies, originals } from "../Constants/urls";
 import { getMovie } from "../Services/apiCalls";
 
-
 const HomePage = () => {
   const [movie, setMovie] = useState();
-  
-  
 
   useEffect(() => {
     getMovie().then((response) => {
@@ -20,6 +17,7 @@ const HomePage = () => {
     });
   }, []);
   return (
+    //Banner and Row container
     <>
       <div style={{ background: "black" }}>
         <Box

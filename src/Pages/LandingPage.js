@@ -1,7 +1,6 @@
-import { Container } from "@mui/system";
+
 import React from "react";
 import Navbar from "../components/navbar";
-import SignInCard from "../components/signInCard";
 import WelcomeText from "../components/welcomeText";
 
 const LandingPage = () => {
